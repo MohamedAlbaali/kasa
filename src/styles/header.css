@@ -1,0 +1,25 @@
+*{
+    font-family: "Montserrat", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.headerContainer{
+    max-width: 1240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+.logo{
+    width: 190px;
+    height: 60px;
+}
+nav{
+    display: flex;
+    gap: 40px;
+}
