@@ -115,7 +115,7 @@
     width: 45%;
     background-color: #f4f4f4;
     max-height: 0;
-    transition: max-height 1s ease-in-out, 0.5s ease-in-out;
+    transition: max-height 1s ease-in-out, 1s ease-in-out;
     overflow: hidden;
 }
 .text-info div.show {

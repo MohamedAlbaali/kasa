@@ -13,7 +13,6 @@
 }
 .presant p{
     position: absolute;
-    text-align: center;
     top: 35%;
     left: 20%;
     color: #ffffff;
@@ -51,4 +50,23 @@
     bottom: 20px;
     left: 20px;
     color: #ffffff;
+}
+
+@media (max-width: 767.98px) {
+    .presant{
+        height: 100px;
+        margin: 20px;
+    }
+    .presant p{
+        top: 15%;
+        left: 10%;
+        font-size: 24px;
+        width: 220px;
+    }
+    .hebergemants{
+        background: none;
+        margin: 10px auto;
+        padding: 20px;
+        gap: 20px;
+    }
 }

@@ -25,11 +25,9 @@ const aboutList = [
 ];
 
 function About(){
-    const [openMenus, setOpenMenus] = useState({}); // كائن لحفظ حالة كل سهم
-
-    // دالة لتبديل فتح/إغلاق القائمة بناءً على معرف السهم
+    const [openMenus, setOpenMenus] = useState({}); 
     const toggleMenu = (id) => {
-      const updatedMenus = { ...openMenus }; // نسخ الحالة الحالية
+      const updatedMenus = { ...openMenus };
       updatedMenus[id] = !openMenus[id];
       setOpenMenus(updatedMenus); 
     };
