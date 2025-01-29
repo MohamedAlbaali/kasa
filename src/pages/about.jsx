@@ -25,7 +25,7 @@ const aboutList = [
 ];
 
 function About(){
-    const [openMenus, setOpenMenus] = useState({}); 
+    const [openMenus, setOpenMenus] = useState({0:false, 1:false, 2:false, 3:false}); 
     const toggleMenu = (id) => {
       const updatedMenus = { ...openMenus };
       updatedMenus[id] = !openMenus[id];
@@ -40,9 +40,9 @@ function About(){
                 <div key={index}>
                     <div className='drowp-about'>
                         <p>{item.title}</p>
-                        <button onClick={()=> toggleMenu(index)} className='drop'><i className="fa-solid fa-chevron-up"></i></button>
+                        <button onClick={()=> toggleMenu(index)} className='drop'><i className={openMenus[index] === false?"fa-solid fa-chevron-up": "fa-solid fa-chevron-up down"}></i></button>
                     </div>
-                    <div className={openMenus[index] === true?'info-div showing':'info-div'}>
+                    <div className={openMenus[index] === true?'info-div show':'info-div'}>
                         <p className='text-about'>{item.content}</p>
                     </div>
                 </div>

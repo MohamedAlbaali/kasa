@@ -6,7 +6,6 @@ export const DataContext = createContext();
 function Featchapi({ children }) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-
     useEffect(() => {
         fetch('/data.json')
             .then((response) => response.json())

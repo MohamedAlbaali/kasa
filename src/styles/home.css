@@ -50,12 +50,32 @@
     bottom: 20px;
     left: 20px;
     color: #ffffff;
+    width: 60%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .presant{
+        margin: 20px;
+    }
+    .hebergemants{
+        border-radius: 0;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .hebergemants a{
+        width: 45%;
+        height: 300px
+    }
+    .presant p{
+        top: 25%;
+        left: 10%;
+    }
 }
 
 @media (max-width: 767.98px) {
     .presant{
         height: 100px;
-        margin: 20px;
+        margin: 0 20px;
     }
     .presant p{
         top: 15%;
@@ -68,5 +88,8 @@
         margin: 10px auto;
         padding: 20px;
         gap: 20px;
+    }
+    .hebergemants a{
+        height: 240px
     }
 }

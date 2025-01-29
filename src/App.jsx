@@ -17,8 +17,8 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='about' element={<About/>}/>
-              <Route path='*' element={<ErrorPage/>}/>
               <Route path="/project/:id" element={<ProjectDetails/>}/>
+              <Route path='*' element={<ErrorPage/>}/>
             </Routes>
       </Featchapi>
       <Footer/>
