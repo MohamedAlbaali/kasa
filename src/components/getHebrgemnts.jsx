@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useContext} from 'react'
-import {DataContext} from '../contexts/featchapi'
+import table from '../../public/data.json'
+
 
 
 function GetHebrgemnts(){
-    const { data } = useContext(DataContext);
+    const data  = table;
     return( 
         data.map((ad)=>(
             <Link key={ad.id} to={`/project/${ad.id}`}>

@@ -25,24 +25,29 @@ const aboutList = [
 ];
 
 function About(){
-    const [openMenus, setOpenMenus] = useState({0:false, 1:false, 2:false, 3:false}); 
+    const [openMenus, setOpenMenus] = useState([
+        {id: 0, name: false},
+        {id: 1, name: false},
+        {id: 2, name: false},
+        {id: 3, name: false},
+    ]); 
     const toggleMenu = (id) => {
-      const updatedMenus = { ...openMenus };
-      updatedMenus[id] = !openMenus[id];
-      setOpenMenus(updatedMenus); 
+    //   setOpenMenus(item => item.map((value, index)=>index === id ? !value: value));
+        const newo = openMenus.map((item) =>
+            item.id === id ? { ...item, name: !item.name } : { ...item, name: false }
+        );
+        console.log(newo)
+        setOpenMenus(newo) 
     };
-    // setTimeout(()=>{
-    //     setOpenMenus(updatedMenus); 
-    //   }, 1000)
     function ListAbout(){
         return (
             aboutList.map((item, index)=>(
                 <div key={index}>
                     <div className='drowp-about'>
                         <p>{item.title}</p>
-                        <button onClick={()=> toggleMenu(index)} className='drop'><i className={openMenus[index] === false?"fa-solid fa-chevron-up": "fa-solid fa-chevron-up down"}></i></button>
+                        <button onClick={()=> toggleMenu(index)} className='drop'><i className={openMenus[index].name === false?"fa-solid fa-chevron-up": "fa-solid fa-chevron-up down"}></i></button>
                     </div>
-                    <div className={openMenus[index] === true?'info-div show':'info-div'}>
+                    <div className={openMenus[index].name === true?'info-div show':'info-div'}>
                         <p className='text-about'>{item.content}</p>
                     </div>
                 </div>

@@ -118,10 +118,10 @@
 .ani{
     background-color: #E3E3E3;
     border-radius: 5px;
-
+    overflow: hidden;
 }
 .show{
-    animation: ouvr 2s linear 0s 1 normal forwards;
+    animation: ouvr 5s linear 0s 1 normal forwards;
 }
 .text-description{
     padding: 20px;
@@ -138,20 +138,9 @@
     }
 }
 .no-show{
-    max-height: 0;
     overflow: hidden;
-    animation: ferm 0.5s linear 0ms 1 normal forwards;
+    max-height: 0;
 }
-@keyframes ferm {
-    0%{
-        max-height: 1000px ;
-    }
-    100%{
-        max-height:0;
-
-    }
-}
-
 .down{
     animation: down 0.5s linear forwards;
 }

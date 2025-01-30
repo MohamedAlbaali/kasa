@@ -18,3 +18,25 @@
     display: inline-block;
     margin: 50px;
 }
+
+/* tablets */
+@media (min-width: 768px) and (max-width: 1024px){
+    .error-container img{
+        width: 400px;
+        height: 200px;
+        margin: 60px 0;
+    }
+}
+
+
+/* mobils */
+@media (min-width: 320px) and (max-width: 767.98px){
+    .error-container img{
+        width: 200px;
+        height: 100px;
+        margin: 60px 0;
+    }
+    .error-container p{
+        font-size: 18px;
+    }
+}

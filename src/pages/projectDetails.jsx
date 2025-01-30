@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom"
-import {useState, useContext} from 'react'
-import {DataContext} from '../contexts/featchapi'
+import {useState} from 'react'
 import '../styles/project.css'
-
+import table from '../../public/data.json'
 function ProjectDetails(){
-    const { data } = useContext(DataContext);
+    const data  = table;
     const param = useParams();
     const id = param.id;
     const projectData = data.filter(item => item.id == id)
@@ -13,8 +12,7 @@ function ProjectDetails(){
     const tags = project.tags;
     const equipments = project.equipments;
 
-    const [isopenDesc, setIsopenDesc] = useState(false)
-    const [isopenEqu, setIsopenEqu] = useState(false)
+    const [isdrop, setIsdrop] = useState([false, false])
 
     function arowRight(){
         if ( index >= project.pictures.length -1){
@@ -41,16 +39,13 @@ function ProjectDetails(){
         const rat = +project.rating
         return{
             color: id <= rat ? '#FF6060':'#E3E3E3'
-        }
-           
+        }    
+    }
 
+    function drop(i){
+        setIsdrop(item => item.map((valu, index)=> index === i? !valu :valu))
     }
-    function dropdwnDesc(){
-        isopenDesc == false? setIsopenDesc(true):setIsopenDesc(false)
-    }
-    function dropdwnEqu(){
-        isopenEqu == false? setIsopenEqu(true):setIsopenEqu(false)
-    }
+
     function Getequipments(){
         return(
             equipments.map((item, index) =>(
@@ -97,9 +92,9 @@ function ProjectDetails(){
                         <div className="description-drop">
                             <div className="description">
                                 <p>Description</p>
-                                <button onClick={dropdwnDesc} className="drop"><i className={isopenDesc === false?"fa-solid fa-chevron-up":"fa-solid fa-chevron-up down"}></i></button>
+                                <button onClick={()=>drop(0)} className="drop"><i className={isdrop[0] === false?"fa-solid fa-chevron-up":"fa-solid fa-chevron-up down"}></i></button>
                             </div>
-                            <div className={isopenDesc !== false ? 'ani show': 'ani no-show'}>
+                            <div className={isdrop[0] !== false ? 'ani show': 'ani no-show'}>
                                 <p className="text-description">{project.description}</p>
                             </div>
                         </div>
@@ -108,22 +103,14 @@ function ProjectDetails(){
                         <div className="equipements-drop">
                             <div className="equipements">
                                 <p>Équipements</p>
-                                <button onClick={dropdwnEqu} className="drop"><i className={isopenEqu === false?"fa-solid fa-chevron-up":"fa-solid fa-chevron-up down"}></i></button>
+                                <button onClick={()=>drop(1)} className="drop"><i className={isdrop[1] === false?"fa-solid fa-chevron-up":"fa-solid fa-chevron-up down"}></i></button>
                             </div>
                         </div>
-                        <div className={isopenEqu !== false ? 'ani show': 'ani no-show'}>
+                        <div className={isdrop[1] !== false ? 'ani show': 'ani no-show'}>
                                 <Getequipments/>
                         </div>
                     </div>
                 </div>
-                {/* <div className="text-info">
-                    <div className={isopenDesc !== false ? 'show': 'n'}>
-                        <p className="text-description">{project.description}</p>
-                    </div>
-                    <div className={isopenEqu !== false ? 'show': 'n'}>
-                        <Getequipments/>
-                    </div>
-                </div> */}
             </div>
         </>
     )
