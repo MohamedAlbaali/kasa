@@ -32,7 +32,6 @@ function About(){
         {id: 3, name: false},
     ]); 
     const toggleMenu = (id) => {
-    //   setOpenMenus(item => item.map((value, index)=>index === id ? !value: value));
         const newo = openMenus.map((item) =>
             item.id === id ? { ...item, name: !item.name } : { ...item, name: false }
         );
@@ -42,7 +41,7 @@ function About(){
     function ListAbout(){
         return (
             aboutList.map((item, index)=>(
-                <div key={index}>
+                <section key={index}>
                     <div className='drowp-about'>
                         <p>{item.title}</p>
                         <button onClick={()=> toggleMenu(index)} className='drop'><i className={openMenus[index].name === false?"fa-solid fa-chevron-up": "fa-solid fa-chevron-up down"}></i></button>
@@ -50,17 +49,17 @@ function About(){
                     <div className={openMenus[index].name === true?'info-div show':'info-div'}>
                         <p className='text-about'>{item.content}</p>
                     </div>
-                </div>
+                </section>
             ))
         )
     }
     return(
-        <div className='about'>
+        <main className='about'>
             <img src={imag} alt="about" />
             <div className='drowps'>
                 <ListAbout/>
             </div>
-        </div>
+        </main>
     )
 }
 export default About

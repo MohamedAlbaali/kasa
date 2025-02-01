@@ -5,52 +5,15 @@ import GetHebrgemnts from '../components/getHebrgemnts'
 function Home(){
     
     return(
-        <section>
-            <div className='presant'>
+        <main>
+            <section className='presant'>
                 <img src={imag} alt="home" />
                 <p>Chez vous, partout et ailleurs</p>
-            </div>
-            <div className='hebergemants'>
+            </section>
+            <section className='hebergemants'>
                 <GetHebrgemnts/>
-                {/* <a href="#">
-                    <article>
-                        <img src={imag} alt="" />
-                        <p>Titre de la location</p>
-                    </article>
-                </a>
-                <a href="#">
-                    <article>
-                        <img src={imag} alt="" />
-                        <p>Titre de la location</p>
-                    </article>
-                </a>
-                <a href="#">
-                    <article>
-                        <img src={imag} alt="" />
-                        <p>Titre de la location</p>
-                    </article>
-                </a>
-                <a href="#">
-                    <article>
-                        <img src={imag} alt="" />
-                        <p>Titre de la location</p>
-                    </article>
-                </a>
-                <a href="#">
-                    <article>
-                        <img src={imag} alt="" />
-                        <p>Titre de la location</p>
-                    </article>
-                </a>
-                <a href="#">
-                    <article>
-                        <img src={imag} alt="" />
-                        <p>Titre de la location</p>
-                    </article>
-                </a> */}
-                
-            </div>
-        </section>
+            </section>
+        </main>
     )
 }
 export default Home
