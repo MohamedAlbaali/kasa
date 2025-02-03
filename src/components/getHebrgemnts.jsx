@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import table from '../../public/data.json'
 
-
-
 function GetHebrgemnts(){
     const data  = table;
     return( 

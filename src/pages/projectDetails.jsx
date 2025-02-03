@@ -3,6 +3,8 @@ import {useState} from 'react'
 import '../styles/project.css'
 import table from '../../public/data.json'
 import ErrorPage from './error'
+import GetTags from '../components/getTags'
+import Getequipments from'../components/getequipments'
 
 function ProjectDetails(){
     const data  = table;
@@ -27,14 +29,6 @@ function ProjectDetails(){
             setIndex(index-1)
         }
     }
-    function GetTags(){
-        const tags = project.tags;
-        return (
-            tags.map((item, index)=>(
-                <p className="tag" key={index}>{item}</p>
-            ))
-        )
-    }
     function raiting(id){
         const rat = +project.rating
         return{
@@ -43,14 +37,6 @@ function ProjectDetails(){
     }
     function drop(i){
         setIsdrop(item => item.map((valu, index)=> index === i? !valu :valu))
-    }
-    function Getequipments(){
-        const equipments = project.equipments;
-        return(
-            equipments.map((item, index) =>(
-                <p className="text-equipments" key={index}>{item}</p>
-            ))
-        )
     }
     // Vérifiez l'existence de l'ID de la propriété avant de l'afficher
     function exist(){
@@ -122,7 +108,7 @@ function ProjectDetails(){
             )
         }
     }
-
+    
     return(
         exist()
     )

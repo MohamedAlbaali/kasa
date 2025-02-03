@@ -3,7 +3,6 @@ import '../styles/home.css';
 import GetHebrgemnts from '../components/getHebrgemnts'
 
 function Home(){
-    
     return(
         <main>
             <section className='presant'>
